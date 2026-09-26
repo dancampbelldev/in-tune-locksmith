@@ -1,0 +1,306 @@
+/* Contact section ------------------------------------------ */
+
+.contact-section {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+
+  padding:
+    clamp(4.5rem, 8vw, 7rem)
+    clamp(1rem, 5vw, 5rem);
+
+  color: var(--text-primary);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.015),
+      transparent 42%
+    ),
+    linear-gradient(
+      to bottom,
+      var(--bg-dark-alt),
+      var(--bg-dark)
+    );
+
+  border-top:
+    1px solid var(--border-brass);
+}
+
+.contact-section::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at 18% 28%,
+      rgba(154, 103, 50, 0.1),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 82% 72%,
+      rgba(119, 72, 36, 0.08),
+      transparent 36%
+    );
+
+  pointer-events: none;
+}
+
+.contact-inner {
+  position: relative;
+  z-index: 1;
+
+  width: min(100%, 1200px);
+
+  margin: 0 auto;
+}
+
+
+/* Contact heading ------------------------------------------ */
+
+.contact-heading-wrapper {
+  max-width: 760px;
+
+  margin: 0 auto clamp(3rem, 6vw, 4.5rem);
+
+  text-align: center;
+}
+
+
+/* Contact card --------------------------------------------- */
+
+.contact-card {
+  position: relative;
+
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.2fr)
+    minmax(280px, 0.8fr);
+  align-items: center;
+  gap: clamp(2.5rem, 6vw, 5rem);
+
+  padding:
+    clamp(2rem, 5vw, 4rem);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.035),
+      rgba(255, 255, 255, 0.012)
+    ),
+    rgba(28, 20, 15, 0.72);
+
+  border:
+    1px solid rgba(190, 139, 72, 0.32);
+  border-radius: 3px;
+
+  box-shadow:
+    0 24px 55px rgba(0, 0, 0, 0.36);
+}
+
+.contact-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 14px;
+  right: 14px;
+  bottom: -14px;
+  left: -14px;
+
+  z-index: -1;
+
+  border:
+    1px solid rgba(190, 139, 72, 0.22);
+
+  pointer-events: none;
+}
+
+
+/* Contact copy --------------------------------------------- */
+
+.contact-copy {
+  max-width: 680px;
+}
+
+.contact-card-heading {
+  margin-bottom: 1.35rem;
+
+  color: rgb(248, 243, 234);
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.65rem, 3vw, 2.35rem);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.contact-paragraph {
+  margin-bottom: 1.4rem;
+
+  color: var(--text-secondary);
+
+  font-size: clamp(1.05rem, 1.6vw, 1.18rem);
+  line-height: 1.85;
+}
+
+.contact-paragraph:last-child {
+  margin-bottom: 0;
+}
+
+.contact-paragraph-intro {
+  color: rgb(241, 235, 225);
+
+  font-size: clamp(1.08rem, 1.8vw, 1.25rem);
+}
+
+
+/* Contact phone area --------------------------------------- */
+
+.contact-phone-area {
+  position: relative;
+
+  padding:
+    clamp(2rem, 4vw, 3rem);
+
+  text-align: center;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(190, 139, 72, 0.1),
+      rgba(190, 139, 72, 0.025)
+    );
+
+  border:
+    1px solid rgba(190, 139, 72, 0.35);
+  border-radius: 3px;
+}
+
+.contact-phone-area::before {
+  content: "";
+
+  position: absolute;
+
+  top: 18%;
+  bottom: 18%;
+  left: 0;
+
+  width: 3px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      transparent,
+      var(--brass),
+      transparent
+    );
+}
+
+.contact-phone-label {
+  margin-bottom: 0.8rem;
+
+  color: var(--brass-soft);
+
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.contact-phone-number {
+  display: inline-block;
+
+  color: rgb(248, 243, 234);
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.85rem, 4vw, 2.8rem);
+  font-weight: 500;
+  line-height: 1.2;
+  text-decoration: none;
+
+  transition:
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.contact-phone-number:hover,
+.contact-phone-number:focus-visible {
+  color: var(--brass-light);
+
+  transform: translateY(-2px);
+}
+
+.contact-phone-number:focus-visible {
+  outline:
+    2px solid var(--brass-light);
+  outline-offset: 6px;
+}
+
+.contact-phone-note {
+  margin-top: 1rem;
+
+  color: var(--text-muted);
+
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+
+/* Contact tablet ------------------------------------------- */
+
+@media only screen and (max-width: 900px) {
+  .contact-card {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-copy {
+    max-width: 760px;
+  }
+
+  .contact-phone-area {
+    width: min(100%, 520px);
+
+    justify-self: center;
+  }
+
+  .contact-card::before {
+    right: 10px;
+    bottom: -10px;
+    left: -10px;
+  }
+}
+
+
+/* Contact mobile ------------------------------------------- */
+
+@media only screen and (max-width: 600px) {
+  .contact-section {
+    padding: 4rem 1rem;
+  }
+
+  .contact-heading-wrapper {
+    margin-bottom: 3rem;
+  }
+
+  .contact-card {
+    gap: 2.5rem;
+
+    padding: 2rem 1.25rem;
+  }
+
+  .contact-card::before {
+    display: none;
+  }
+
+  .contact-phone-area {
+    padding: 2rem 1rem;
+  }
+
+  .contact-phone-number {
+    font-size: clamp(1.75rem, 9vw, 2.25rem);
+  }
+}

@@ -1,0 +1,329 @@
+/* Site footer ---------------------------------------------- */
+
+.site-footer {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+
+  padding:
+    clamp(3.5rem, 7vw, 5.5rem)
+    clamp(1rem, 5vw, 5rem)
+    1.75rem;
+
+  color: var(--text-secondary);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.012),
+      transparent 40%
+    ),
+    linear-gradient(
+      to bottom,
+      var(--bg-dark),
+      rgb(14, 10, 8)
+    );
+
+  border-top:
+    1px solid var(--border-brass);
+}
+
+.site-footer::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at 10% 20%,
+      rgba(154, 103, 50, 0.08),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 90% 75%,
+      rgba(119, 72, 36, 0.06),
+      transparent 34%
+    );
+
+  pointer-events: none;
+}
+
+.site-footer-inner {
+  position: relative;
+  z-index: 1;
+
+  width: min(100%, 1200px);
+
+  margin: 0 auto;
+}
+
+
+/* Footer main layout --------------------------------------- */
+
+.site-footer-main {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.3fr)
+    minmax(180px, 0.65fr)
+    minmax(240px, 0.8fr);
+  gap: clamp(2.5rem, 6vw, 5rem);
+
+  padding-bottom:
+    clamp(3rem, 6vw, 4.5rem);
+}
+
+
+/* Footer brand --------------------------------------------- */
+
+.site-footer-brand {
+  max-width: 450px;
+}
+
+.site-footer-logo {
+  display: inline-block;
+
+  margin-bottom: 1.25rem;
+
+  color: rgb(248, 243, 234);
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.65rem, 3vw, 2.15rem);
+  font-weight: 500;
+  line-height: 1.2;
+  text-decoration: none;
+
+  transition:
+    color 180ms ease;
+}
+
+.site-footer-logo:hover,
+.site-footer-logo:focus-visible {
+  color: var(--brass-light);
+}
+
+.site-footer-logo:focus-visible {
+  outline:
+    2px solid var(--brass-light);
+  outline-offset: 5px;
+}
+
+.site-footer-description {
+  color: var(--text-muted);
+
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+
+/* Footer headings ------------------------------------------ */
+
+.site-footer-heading {
+  margin-bottom: 1.25rem;
+
+  color: var(--brass-soft);
+
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+
+/* Footer navigation ---------------------------------------- */
+
+.site-footer-links {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.site-footer-links a {
+  position: relative;
+
+  display: inline-block;
+
+  color: var(--text-muted);
+
+  font-size: 0.98rem;
+  line-height: 1.5;
+  text-decoration: none;
+
+  transition:
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.site-footer-links a::after {
+  content: "";
+
+  position: absolute;
+
+  right: 0;
+  bottom: -3px;
+  left: 0;
+
+  height: 1px;
+
+  background-color: var(--brass);
+
+  transform: scaleX(0);
+  transform-origin: left;
+
+  transition:
+    transform 180ms ease;
+}
+
+.site-footer-links a:hover,
+.site-footer-links a:focus-visible {
+  color: var(--text-primary);
+
+  transform: translateX(3px);
+}
+
+.site-footer-links a:hover::after,
+.site-footer-links a:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.site-footer-links a:focus-visible {
+  outline:
+    2px solid var(--brass-light);
+  outline-offset: 5px;
+}
+
+
+/* Footer contact ------------------------------------------- */
+
+.site-footer-contact-label {
+  margin-bottom: 0.45rem;
+
+  color: var(--text-muted);
+
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.site-footer-phone {
+  display: inline-block;
+
+  margin-bottom: 1rem;
+
+  color: rgb(248, 243, 234);
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+  font-weight: 500;
+  line-height: 1.3;
+  text-decoration: none;
+
+  transition:
+    color 180ms ease;
+}
+
+.site-footer-phone:hover,
+.site-footer-phone:focus-visible {
+  color: var(--brass-light);
+}
+
+.site-footer-phone:focus-visible {
+  outline:
+    2px solid var(--brass-light);
+  outline-offset: 5px;
+}
+
+.site-footer-coverage {
+  max-width: 300px;
+
+  color: var(--text-muted);
+
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+
+/* Footer bottom -------------------------------------------- */
+
+.site-footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+
+  padding-top: 1.75rem;
+
+  border-top:
+    1px solid var(--border-brass-light);
+}
+
+.site-footer-copyright,
+.site-footer-note {
+  color: rgba(195, 187, 176, 0.78);
+
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+.site-footer-note {
+  max-width: 520px;
+
+  text-align: right;
+}
+
+
+/* Footer tablet -------------------------------------------- */
+
+@media only screen and (max-width: 900px) {
+  .site-footer-main {
+    grid-template-columns:
+      minmax(0, 1.3fr)
+      minmax(180px, 0.7fr);
+  }
+
+  .site-footer-contact {
+    grid-column: 1 / -1;
+
+    padding-top: 2rem;
+
+    border-top:
+      1px solid var(--border-brass-light);
+  }
+}
+
+
+/* Footer mobile -------------------------------------------- */
+
+@media only screen and (max-width: 600px) {
+  .site-footer {
+    padding:
+      3.75rem
+      1rem
+      1.5rem;
+  }
+
+  .site-footer-main {
+    grid-template-columns: 1fr;
+    gap: 2.75rem;
+
+    padding-bottom: 3rem;
+  }
+
+  .site-footer-contact {
+    grid-column: auto;
+
+    padding-top: 0;
+
+    border-top: 0;
+  }
+
+  .site-footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .site-footer-note {
+    text-align: left;
+  }
+}

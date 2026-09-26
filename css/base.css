@@ -1,0 +1,158 @@
+/* Variables ------------------------------------------------ */
+
+:root {
+  --navbar-height: 80px;
+  --page-max-width: 1500px;
+
+  --bg-page: rgb(25, 18, 13);
+  --bg-dark: rgb(22, 16, 12);
+  --bg-dark-alt: rgb(34, 24, 17);
+  --bg-brown: rgb(28, 20, 15);
+  --bg-brown-alt: rgb(38, 27, 19);
+
+  --text-primary: rgb(241, 235, 225);
+  --text-secondary: rgb(218, 210, 198);
+  --text-muted: rgb(195, 187, 176);
+
+  --brass: rgb(190, 139, 72);
+  --brass-light: rgb(220, 171, 101);
+  --brass-soft: rgb(213, 163, 93);
+
+  --border-brass: rgba(190, 139, 72, 0.3);
+  --border-brass-light: rgba(190, 139, 72, 0.2);
+
+  --shadow-dark: rgba(0, 0, 0, 0.3);
+  --shadow-heavy: rgba(0, 0, 0, 0.42);
+}
+
+
+/* Reset ---------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  width: 100%;
+  min-height: 100%;
+
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  min-height: 100%;
+
+  padding-top: var(--navbar-height);
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  background-color: var(--bg-page);
+
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+}
+
+
+/* Main page container -------------------------------------- */
+
+.page-wrapper {
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+  max-width: var(--page-max-width);
+
+  margin: 0 auto;
+
+  background-color: transparent;
+}
+
+
+/* Shared section headings ---------------------------------- */
+
+.section-eyebrow {
+  margin-bottom: 0.75rem;
+
+  color: var(--brass);
+
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.section-heading {
+  color: rgb(248, 243, 234);
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 5vw, 3.3rem);
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+.section-heading::after {
+  content: "";
+
+  width: 68px;
+  height: 2px;
+
+  margin: 1.4rem auto 0;
+
+  display: block;
+
+  background:
+    linear-gradient(
+      to right,
+      transparent,
+      var(--brass),
+      transparent
+    );
+}
+
+
+/* Mobile variables ----------------------------------------- */
+
+@media only screen and (max-width: 600px) {
+  :root {
+    --navbar-height: 70px;
+  }
+}
+
+
+/* Reduced motion ------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Anchor offset for fixed navigation ------------------------ */
+
+section[id] {
+  scroll-margin-top: calc(var(--navbar-height) + 1rem);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

@@ -1,0 +1,228 @@
+/* Areas covered section ------------------------------------ */
+
+.areas-covered-section {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+
+  padding:
+    clamp(3.75rem, 7vw, 5.5rem)
+    clamp(1rem, 5vw, 5rem);
+
+  color: var(--text-primary);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.014),
+      transparent 42%
+    ),
+    linear-gradient(
+      to bottom,
+      var(--bg-brown-alt),
+      var(--bg-brown)
+    );
+
+  border-top:
+    1px solid var(--border-brass);
+}
+
+.areas-covered-section::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at 20% 50%,
+      rgba(154, 103, 50, 0.08),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 80% 50%,
+      rgba(119, 72, 36, 0.06),
+      transparent 34%
+    );
+
+  pointer-events: none;
+}
+
+.areas-covered-inner {
+  position: relative;
+  z-index: 1;
+
+  width: min(100%, 1200px);
+
+  margin: 0 auto;
+}
+
+
+/* Areas covered heading ------------------------------------ */
+
+.areas-covered-heading {
+  max-width: 760px;
+
+  margin: 0 auto clamp(2.5rem, 5vw, 3.5rem);
+
+  text-align: center;
+}
+
+
+/* Areas covered content ------------------------------------ */
+
+.areas-covered-content {
+  width: min(100%, 900px);
+
+  margin: 0 auto;
+
+  text-align: center;
+}
+
+.areas-covered-intro {
+  max-width: 760px;
+
+  margin: 0 auto clamp(2rem, 4vw, 2.75rem);
+
+  color: var(--text-secondary);
+
+  font-size: clamp(1.05rem, 1.6vw, 1.18rem);
+  line-height: 1.85;
+}
+
+
+/* Location cards ------------------------------------------- */
+
+.areas-covered-locations {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1rem, 3vw, 1.75rem);
+
+  text-align: left;
+}
+
+.areas-covered-location {
+  position: relative;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+
+  padding:
+    clamp(1.4rem, 3vw, 2rem);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.03),
+      rgba(255, 255, 255, 0.01)
+    );
+
+  border:
+    1px solid rgba(190, 139, 72, 0.3);
+  border-radius: 3px;
+}
+
+.areas-covered-location::after {
+  content: "";
+
+  position: absolute;
+
+  right: 1.25rem;
+  bottom: 0;
+
+  width: 36%;
+  height: 1px;
+
+  background:
+    linear-gradient(
+      to right,
+      transparent,
+      rgba(190, 139, 72, 0.5)
+    );
+}
+
+.areas-covered-marker {
+  position: relative;
+
+  flex: 0 0 auto;
+
+  width: 18px;
+  height: 18px;
+
+  margin-top: 0.22rem;
+
+  border:
+    2px solid var(--brass-soft);
+  border-radius: 50%;
+}
+
+.areas-covered-marker::after {
+  content: "";
+
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 5px;
+  height: 5px;
+
+  background-color: var(--brass-soft);
+
+  border-radius: 50%;
+
+  transform: translate(-50%, -50%);
+}
+
+.areas-covered-location-name {
+  margin-bottom: 0.4rem;
+
+  color: rgb(248, 243, 234);
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.areas-covered-location-text {
+  color: var(--text-muted);
+
+  font-size: 0.98rem;
+  line-height: 1.65;
+}
+
+
+/* Coverage note -------------------------------------------- */
+
+.areas-covered-note {
+  margin-top: clamp(1.75rem, 4vw, 2.5rem);
+
+  color: var(--text-muted);
+
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+
+/* Areas covered mobile ------------------------------------- */
+
+@media only screen and (max-width: 600px) {
+  .areas-covered-section {
+    padding: 4rem 1rem;
+  }
+
+  .areas-covered-heading {
+    margin-bottom: 2.5rem;
+  }
+
+  .areas-covered-locations {
+    grid-template-columns: 1fr;
+  }
+
+  .areas-covered-location {
+    padding: 1.5rem 1.25rem;
+  }
+}

@@ -1,0 +1,81 @@
+/* Fixed hero image layer ----------------------------------- */
+
+.fixed-hero-background {
+  position: fixed;
+  z-index: 0;
+
+  top: var(--navbar-height);
+  left: 50%;
+
+  width: 100%;
+  max-width: var(--page-max-width);
+
+  height: calc(100vh - var(--navbar-height));
+  height: calc(100svh - var(--navbar-height));
+  height: calc(100dvh - var(--navbar-height));
+
+  transform: translate3d(-50%, 0, 0);
+
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.12),
+      rgba(0, 0, 0, 0.45)
+    ),
+    url("../../images/hero-main-2-1200-800.jpg");
+
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  background-color: rgb(20, 16, 13);
+
+  pointer-events: none;
+
+  backface-visibility: hidden;
+  contain: paint;
+  will-change: transform;
+}
+
+
+/*
+  Once the hero has been completely covered by the following
+  sections, JavaScript adds this class so the browser no longer
+  needs to render the large fixed background behind the page.
+*/
+
+.fixed-hero-background.is-hidden {
+  visibility: hidden;
+}
+
+
+/* Transparent hero section --------------------------------- */
+
+.parallax {
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+  max-width: var(--page-max-width);
+
+  height: calc(100vh - var(--navbar-height));
+  height: calc(100svh - var(--navbar-height));
+  height: calc(100dvh - var(--navbar-height));
+
+  min-height: calc(100vh - var(--navbar-height));
+  min-height: calc(100svh - var(--navbar-height));
+  min-height: calc(100dvh - var(--navbar-height));
+
+  margin: 0 auto;
+
+  background-color: transparent;
+}
+
+
+/* Mobile hero ---------------------------------------------- */
+
+@media only screen and (max-width: 600px) {
+  .fixed-hero-background {
+    background-position: center center;
+  }
+}
